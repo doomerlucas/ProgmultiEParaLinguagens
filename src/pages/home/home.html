@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Pagina Inicial</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    
+    <ion-searchbar placeholder="Assunto, Autor e Editora" (ionInput)="getItems($event)"></ion-searchbar>
+   
+
+    <button ion-button (click)="openSobre()" full color="secondary">Cadastrar Livros</button>
+     
+     <ion-item *ngFor="let item of items" class="item item-button-right">
+        {{ item }} 
+        <button ion-button item-end color="success"> Ler</button> 
+        <button ion-button item-end color="secondary"> Atualizar</button> 
+        <button ion-button item-end color="danger"> Excluir</button> 
+    
+      </ion-item>
+
+</ion-content>
